@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+h2, h1 {
+    font-family: 'MedievalSharp', cursive;
+    font-weight: bold;
+}
+
+p {
+    font-style: italic;
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+h2 { 
+    margin-bottom: 10px;
+}
+
+.custom-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.double-input {
+    height: 85px !important;
+}
+
+.custom-input input {
+    width: 100%;
+}
+
+.double-input input {
+    font-size: 2rem;
+}
+
+.custom-input label {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 0;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+    height: 100%;
+}
+
+.custom-input input, .custom-input input:focus, .custom-input input::selection, .custom-input input:active {
+    border: 2px solid black;
+    box-shadow: none;
+    height: 100%;
+}
+
+.custom-input p {
+    margin-bottom: 0;
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 10px;
+    width: 200px;
+}
+span {
+    font-size: 11px;
+}
+
+.img-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.ficha-personagem {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.personagem-image-wrapper {
+    margin-top: 10px;
+    width: 100%;
+    height: 290px;
+    border: 1.5px solid black;
+    overflow: hidden;
+}
+
+.personagem-image-wrapper img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.img-section p {
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 9px;
+}
+
+.hpa input {
+    margin-top: 4px;
+}
+
+.save {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    box-shadow: 2px 2px 5px black;
+}
