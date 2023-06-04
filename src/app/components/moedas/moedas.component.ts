@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-moedas',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moedas.component.css']
 })
 export class MoedasComponent implements OnInit {
+  faCoins = faCoins
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonagemService } from '../personagem-service';
 
 @Component({
   selector: 'app-geral',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeralComponent implements OnInit {
 
-  constructor() { }
+  constructor(private personagemService: PersonagemService) { }
 
   ngOnInit(): void {
+    this.personagemService.sincronizarPersonagem();
   }
 
 }

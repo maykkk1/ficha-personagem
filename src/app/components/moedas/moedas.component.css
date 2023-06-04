@@ -1,0 +1,47 @@
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 25px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.53);
+}
+
+.icon-abrv {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100px;
+    font-size:2rem;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+span {
+    font-size: 19px;
+}
+
+.pl {
+    color: #E5E4E2;
+}
+
+.po {
+    color: #FFD700;
+}
+
+.pe {
+    color: #F2E279;
+}
+
+.pp {
+    color: #d5d5d5;
+}
+
+.pc {
+    color: #b87333;
+}
