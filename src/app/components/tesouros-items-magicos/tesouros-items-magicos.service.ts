@@ -38,4 +38,19 @@ export class ItensService {
         return [...this.itens.data];
     }
 
+    adicionarItem(id: number){
+        const idx = this.itens.data.findIndex(i => i.id == id);
+        this.itens.data[idx].quantidade++;
+        this.salvarDados();
+    }
+
+    removeItem(id: number) {
+        const idx = this.itens.data.findIndex(i => i.id == id);
+        if(this.itens.data[idx].quantidade < 2){
+            this.itens.data.splice(idx, 1);
+        } else {
+            this.itens.data[idx].quantidade--;
+        }
+        this.salvarDados();
+    }
     }

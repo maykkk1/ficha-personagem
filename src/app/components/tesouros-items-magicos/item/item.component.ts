@@ -21,11 +21,11 @@ export class ItemComponent implements OnInit {
   }
 
   adicionar(){
-
+    this.itensService.adicionarItem(this.item.id);
   }
 
   diminuir(){
-    
+    this.itensService.removeItem(this.item.id);
   }
 
 }
