@@ -112,6 +112,21 @@ span {
     position: fixed;
     right: 50px;
     bottom: 50px;
+    color: black;
+    box-shadow: 2px 2px 5px black;
+}
+
+.painel {
+    position: fixed;
+    right: 150px;
+    bottom: 50px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.editor {
+    position: fixed;
+    right: 340px;
+    bottom: 50px;
     box-shadow: 2px 2px 5px black;
 }
 

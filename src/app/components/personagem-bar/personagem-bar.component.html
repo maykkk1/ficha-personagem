@@ -1,31 +1,31 @@
 <div class="personage-bar">
-    <h2>Reck - O Imprudente</h2>
+    <h2>{{ personagem.nome }} - {{ personagem.titulo }}</h2>
     <div class="lv-wrapper">
-        <div class="lv">1</div>
+        <div class="lv">{{ personagem.level }}</div>
         <div class="rogue">
             <div class="icon-wrapper">
                 <img src="../../../assets/image/hood.png" alt="">
             </div>
-            <h3>Thief</h3>
+            <h3>{{ personagem.classe }}</h3>
         </div>
     </div>
     <hr>
     <div class="hp-bar">
         <h5>Vida</h5>
         <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            <small class="justify-content-center d-flex position-absolute w-100">15/15</small>
+            <div class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width':getVidaPorcentagem()+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <small class="justify-content-center d-flex position-absolute w-100">{{ personagem.vida }}/ {{ personagem.vidaMaxima }}</small>
         </div>
     </div>
     <div class="xp-bar">
         <h5>XP</h5>
         <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            <small class="justify-content-center d-flex position-absolute w-100">159/1200 +10%</small>
+            <div class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width':getXpPorcentagem()+'%'}" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            <small class="justify-content-center d-flex position-absolute w-100">{{ personagem.xp }}/{{ personagem.xpParaUpar }} +10%</small>
         </div>
     </div>
     <div class="alinhamento">
         <fa-icon [ngClass]="'coin'" [icon]="alinhamentoIcon"></fa-icon>
-        <span>Neutro</span>
+        <span>{{ personagem.alinhamento }}</span>
     </div>
 </div>

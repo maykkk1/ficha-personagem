@@ -22,6 +22,8 @@ import { PersonagemBarComponent } from './components/personagem-bar/personagem-b
 import { AtributosComponent } from './components/atributos/atributos.component';
 import { ProtecaoComponent } from './components/protecao/protecao.component';
 import { MoedasComponent } from './components/moedas/moedas.component';
+import { PainelControleComponent } from './components/painel-controle/painel-controle.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { MoedasComponent } from './components/moedas/moedas.component';
     PersonagemBarComponent,
     AtributosComponent,
     ProtecaoComponent,
-    MoedasComponent
+    MoedasComponent,
+    PainelControleComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

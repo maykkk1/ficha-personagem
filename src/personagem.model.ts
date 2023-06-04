@@ -1,5 +1,7 @@
 export class Personagem {
     nome: string;
+    level: number;
+    classe: string;
     titulo: string;
     alinhamento: string;
     vida: number;

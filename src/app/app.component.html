@@ -131,10 +131,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="custom-input double-input">
-                            <label for="pontos_vida_personagem">PV</label>
-                            <input formControlName="pontosVidaPersonagem" type="text" id="pontos_vida_personagem">
-                        </div>
-                        <div class="custom-input double-input">
                             <label for="classe_armadura_personagem">CA</label>
                             <input formControlName="classeArmaduraPersonagem" type="text" id="classe_armadura_personagem">
                         </div>
@@ -145,11 +141,6 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="custom-input">
-                            <label for="pontos_vida_ma_personagem">Max</label>
-                            <input formControlName="pontosVidaMaPersonagem" type="text" id="pontos_vida_max_personagem">
-                            <p class="desc"> Pontos de Vida máximos </p>
-                        </div>
                         <div class="custom-input">
                             <label for="modificador_con_vida_personagem">±</label>
                             <input formControlName="modificadorConVidaPersonagem" type="text" id="modificador_con_vida_personagem">
@@ -401,5 +392,9 @@
             </div>
         </div>
     </div>
+    <app-painel-controle (closePainel)="painelVisible()" *ngIf="showPainel"></app-painel-controle>
+    <app-editor *ngIf="showEditor"></app-editor>
+    <button (click)="editorVisible()" class="btn btn-primary editor">Editor</button>
+    <button (click)="painelVisible()" class="btn btn-warning painel">Painel de Controle</button>
     <button class="btn btn-success save">Salvar</button>
 </form>

@@ -1,0 +1,60 @@
+<div class="modal-wrapper">
+    <form [formGroup]="painelForm">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a (click)="mudarMenu(0)" class="nav-link" role="button">Experiência</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="mudarMenu(1)" class="nav-link" role="button">Moedas</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="mudarMenu(2)" class="nav-link" role="button">Vida</a>
+            </li>
+        </ul>
+        <!-- experiencia -->
+        <div *ngIf="menuOption == 0" class="experiencia">
+            <div class="form-group">
+                <label for="xp">Quantidade de experiência</label>
+                <input class="form-control" formControlName="xp" id="xp" type="number">
+                <small id="emailHelp" class="form-text text-muted">Caso queria remover a xp, coloque numeros negativos.</small>
+            </div>
+            <button (click)="onSubmit()" class="btn btn-primary">Alterar</button>
+        </div>
+        <!-- moedas -->
+        <div  *ngIf="menuOption == 1" class="moedas">
+            <div class="form-group">
+                <label for="platina">Platina</label>
+                <input class="form-control" formControlName="platina" id="platina" type="number">
+            </div>
+            <div class="form-group">
+                <label for="ouro">Ouro</label>
+                <input class="form-control" formControlName="ouro" id="ouro" type="number">
+            </div>
+            <div class="form-group">
+                <label for="electrum">Electrum</label>
+                <input class="form-control" formControlName="electrum" id="electrum" type="number">
+            </div>
+            <div class="form-group">
+                <label for="prata">Prata</label>
+                <input class="form-control" formControlName="prata" id="prata" type="number">
+            </div>
+            <div class="form-group">
+                <label for="cobre">Cobre</label>
+                <input class="form-control" formControlName="cobre" id="cobre" type="number">
+                <small id="emailHelp" class="form-text text-muted">Caso o objetivo seja remover, coloque numeros negativos.</small>
+            </div>
+            <button (click)="onSubmit()" class="btn btn-primary">Alterar</button>
+        </div>
+        <div *ngIf="menuOption == 2" class="vida">
+            <div class="form-group">
+                <label for="vida">Vida</label>
+                <input class="form-control" formControlName="vida" id="vida" type="number">
+                <small id="emailHelp" class="form-text text-muted">Para remover vida(causar dano), digite numeros negativos.</small>
+            </div>
+            <button (click)="onSubmit()" class="btn btn-primary">Alterar</button>
+        </div>
+        <button (click)="close()" type="button" class="btn btn-danger">
+            Sair
+        </button>
+    </form>
+</div>

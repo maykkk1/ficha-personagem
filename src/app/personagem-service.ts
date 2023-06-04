@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { Protecoes } from "src/personagem.model";
+import { Moedas, Protecoes } from "src/personagem.model";
 import { Personagem } from "src/personagem.model";
 
 @Injectable({providedIn: 'root'})
@@ -14,8 +14,10 @@ export class PersonagemService {
         } else {
             const personagem :Personagem = {
                 nome: 'Reck',
+                level: 1,
                 titulo: 'O Imprudente',
                 alinhamento: 'Neutro',
+                classe: 'Thief',
                 vida: 15,
                 vidaMaxima: 15,
                 xp: 0,
@@ -48,22 +50,92 @@ export class PersonagemService {
         }
     }
 
+    getPersonagem(){
+      return {...this.personagem}
+    }
 
     getXpByNivel(nv: number){
-        return progressao.find(n => n.Nível == nv)?.XP;
+        return progressao.find(n => n.Nível == nv + 1)?.XP;
     }
 
     getProtecosByNivel(nv: number){
         const nivel = progressao.find(n => n.Nível == nv)!;
         const protecoes: Protecoes = {
             m: nivel?.M,
-            v: nivel?.F,
+            v: nivel?.V,
             p: nivel?.P,
             s: nivel?.S,
             f: nivel?.F,
             sabedoriaMod: 0
         }
         return protecoes;
+    }
+
+    alterarVida(valor: number){
+      this.personagem.vida += valor;
+      if(this.personagem.vida > this.personagem.vidaMaxima){
+        this.personagem.vida = this.personagem.vidaMaxima;
+      }
+      if(this.personagem.vida < 0) {
+        this.personagem.vida = 0;
+        //avisar que morreu
+      }
+      this.salvarDados();
+    }
+
+    alterarXp(valor: number){
+      this.personagem.xp += valor;
+      if(this.personagem.xp < 0){
+        this.personagem.xp = 0;
+        return this.salvarDados();
+      }
+      if(this.personagem.xp > this.personagem.xpParaUpar){
+        return this.upar();
+      }
+      if(this.personagem.xp < this.getXpByNivel(this.personagem.level - 1)!){
+        this.desupar();
+      }
+      this.salvarDados();
+    }
+
+    upar(){
+      this.personagem.level++;
+      this.personagem.protecoes = this.getProtecosByNivel(this.personagem.level);
+      this.personagem.xpParaUpar = this.getXpByNivel(this.personagem.level)!;
+      if(this.personagem.xp > this.personagem.xpParaUpar){
+        this.upar();
+      }
+      this.salvarDados();
+    }
+
+    desupar(){
+      this.personagem.level--;
+      this.personagem.protecoes = this.getProtecosByNivel(this.personagem.level);
+      this.personagem.xpParaUpar = this.getXpByNivel(this.personagem.level)!;
+      if(this.personagem.xp < this.getXpByNivel(this.personagem.level - 1)!){
+        this.desupar();
+      }
+      this.salvarDados();
+    }
+
+    alterarMoedas(moedas: Moedas){
+      console.log(moedas);
+      this.personagem.moedas.platina += moedas.platina;
+      if(this.personagem.moedas.platina < 0) this.personagem.moedas.platina = 0;
+      this.personagem.moedas.ouro += moedas.ouro;
+      if(this.personagem.moedas.ouro < 0) this.personagem.moedas.ouro = 0;
+      this.personagem.moedas.electrum += moedas.electrum;
+      if(this.personagem.moedas.electrum < 0) this.personagem.moedas.electrum = 0;
+      this.personagem.moedas.prata += moedas.prata;
+      if(this.personagem.moedas.prata < 0) this.personagem.moedas.prata = 0;
+      this.personagem.moedas.cobre += moedas.cobre;
+      if(this.personagem.moedas.cobre < 0) this.personagem.moedas.cobre = 0;
+      this.salvarDados();
+    }
+
+    salvarDados(){
+      localStorage.setItem('personagem', JSON.stringify(this.personagem));
+      this.personagemChange.next({...this.personagem});
     }
 
 }

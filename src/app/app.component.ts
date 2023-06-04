@@ -9,6 +9,8 @@ import { FichaService } from './services/ficha.service';
 })
 export class AppComponent implements OnInit {
   title = 'ficha-personagem';
+  showPainel: boolean = false;
+  showEditor: boolean = false;
   formulario : FormGroup;
   dados: any;
 
@@ -76,34 +78,6 @@ export class AppComponent implements OnInit {
       armasArmaduras8 : new FormControl(this.dados['armasArmaduras8']),
       armasArmaduras9 : new FormControl(this.dados['armasArmaduras9']),
       armasArmaduras10 : new FormControl(this.dados['armasArmaduras10']),
-      magicos1 : new FormControl(this.dados['magicos1']),
-      magicos2 : new FormControl(this.dados['magicos2']),
-      magicos3 : new FormControl(this.dados['magicos3']),
-      magicos4 : new FormControl(this.dados['magicos4']),
-      magicos5 : new FormControl(this.dados['magicos5']),
-      magicos6 : new FormControl(this.dados['magicos6']),
-      magicos7 : new FormControl(this.dados['magicos7']),
-      magicos8 : new FormControl(this.dados['magicos8']),
-      magicos9 : new FormControl(this.dados['magicos9']),
-      magicos10 : new FormControl(this.dados['magicos10']),
-      tesouros1 : new FormControl(this.dados['tesouros1']),
-      tesouros2 : new FormControl(this.dados['tesouros2']),
-      tesouros3 : new FormControl(this.dados['tesouros3']),
-      tesouros4 : new FormControl(this.dados['tesouros4']),
-      tesouros5 : new FormControl(this.dados['tesouros5']),
-      tesouros6 : new FormControl(this.dados['tesouros6']),
-      tesouros7 : new FormControl(this.dados['tesouros7']),
-      tesouros8 : new FormControl(this.dados['tesouros8']),
-      tesouros9 : new FormControl(this.dados['tesouros9']),
-      tesouros10 : new FormControl(this.dados['tesouros10']),
-      experiencia : new FormControl(this.dados['experiencia']),
-      experienciaProx : new FormControl(this.dados['experienciaProx']),
-      modificadorXp : new FormControl(this.dados['modificadorXp']),
-      pl : new FormControl(this.dados['pl']),
-      po : new FormControl(this.dados['po']),
-      pe : new FormControl(this.dados['pe']),
-      pp : new FormControl(this.dados['pp']),
-      pc : new FormControl(this.dados['pc']),
       te : new FormControl(this.dados['te']),
       eq : new FormControl(this.dados['eq']),
       cargaTotal : new FormControl(this.dados['cargaTotal'])
@@ -238,6 +212,14 @@ export class AppComponent implements OnInit {
       // cargaTotal : new FormControl(null)
       
     });
+  }
+
+  painelVisible(){
+    this.showPainel = !this.showPainel;
+  }
+
+  editorVisible(){
+    this.showEditor = !this.showEditor;
   }
 
   onSubmit(){
