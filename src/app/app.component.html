@@ -393,7 +393,7 @@
         </div>
     </div>
     <app-painel-controle (closePainel)="painelVisible()" *ngIf="showPainel"></app-painel-controle>
-    <app-editor *ngIf="showEditor"></app-editor>
+    <app-editor (closeModal)="editorVisible()" *ngIf="showEditor"></app-editor>
     <button (click)="editorVisible()" class="btn btn-primary editor">Editor</button>
     <button (click)="painelVisible()" class="btn btn-warning painel">Painel de Controle</button>
     <button class="btn btn-success save">Salvar</button>

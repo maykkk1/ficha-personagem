@@ -13,19 +13,23 @@ export class PersonagemBarComponent implements OnInit, OnDestroy {
   personagem: Personagem;
   alinhamentoIcon = faTheaterMasks
   personagem$Sub: Subscription;
+  xpTotal: number;
 
   constructor(private personagemService: PersonagemService) { }
 
   ngOnInit(): void {
     this.personagem = this.personagemService.getPersonagem();
+    this.xpTotal = this.personagemService.getXpByNivel(this.personagem.level)! - this.personagemService.getXpByNivel(this.personagem.level - 1)!;
+    console.log(this.xpTotal);
 
     this.personagem$Sub = this.personagemService.personagemChange.subscribe(data => {
       this.personagem = data;
+      this.xpTotal = this.personagemService.getXpByNivel(this.personagem.level)! - this.personagemService.getXpByNivel(this.personagem.level - 1)!;
     })
   }
 
   getXpPorcentagem(){
-    return  (this.personagem.xp / this.personagem.xpParaUpar) * 100;
+    return  ((this.personagem.xp - this.personagemService.getXpByNivel(this.personagem.level - 1)!) / this.xpTotal) * 100;
   }
 
   getVidaPorcentagem(){

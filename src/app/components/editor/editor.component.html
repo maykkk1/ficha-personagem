@@ -1,1 +1,26 @@
-<p>editor works!</p>
+<div class="modal-wrapper">
+    <form [formGroup]="editorForm">
+        <div class="form-group">
+            <select (change)="tipoChange()" formControlName="tipo">
+                <option value="0">Texto</option>
+                <option value="1">Numerico</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="campo">Nome do campo</label>
+            <input class="form-control" formControlName="campo" id="campo" type="text">
+        </div>
+        <div *ngIf="selectedType == 0" class="form-group">
+            <label for="valorTxt">Valor Textual</label>
+            <input class="form-control" formControlName="valorTxt" id="valorTxt" type="text">
+        </div>
+        <div *ngIf="selectedType == 1" class="form-group">
+            <label for="valorNum">Valor numérico</label>
+            <input class="form-control" formControlName="valorNum" id="valorNum" type="number">
+        </div>
+        <button (click)="onSubmit()" type="submit" class="btn btn-dark">Alterar</button>
+        <button (click)="close()" type="button" class="btn btn-danger">
+            Sair
+        </button>
+    </form>
+</div>

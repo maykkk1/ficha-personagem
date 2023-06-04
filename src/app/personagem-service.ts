@@ -5,7 +5,7 @@ import { Personagem } from "src/personagem.model";
 
 @Injectable({providedIn: 'root'})
 export class PersonagemService {
-    personagem: Personagem;
+    personagem: Personagem | any;
     personagemChange: Subject<Personagem> = new Subject<Personagem>();
 
     sincronizarPersonagem(){
@@ -137,6 +137,16 @@ export class PersonagemService {
       localStorage.setItem('personagem', JSON.stringify(this.personagem));
       this.personagemChange.next({...this.personagem});
     }
+
+  editarCampoNumerico(campo: string, valor:number){
+    this.personagem[campo as keyof Personagem] = valor;
+    this.salvarDados();
+  }
+
+  editarCampoTextual(campo: string, valor:number){
+    this.personagem[campo as keyof Personagem] = valor;
+    this.salvarDados();
+  }
 
 }
 
