@@ -1,0 +1,17 @@
+<li>
+    <div class="top">
+        <h3>{{ equipamento.nome }}</h3>
+        <p>{{ equipamento.descricao }}</p>
+    </div>
+    <div class="bottom">
+        <div class="equipamento-info">
+            <fa-icon [ngClass]="'coin'" [icon]="faCoins"></fa-icon>
+            <span>{{ equipamento.preco * equipamento.quantidade }}</span>
+        </div>
+    </div>
+    <div class="menu">
+        <span class="quantidade"> {{ equipamento.quantidade }}</span>
+        <fa-icon (click)="adicionar()" [ngClass]="'up'" [icon]="faArrowUp"></fa-icon>
+        <fa-icon (click)="diminuir()" [ngClass]="'down'" [icon]="faArrowDown"></fa-icon>
+    </div>
+</li>

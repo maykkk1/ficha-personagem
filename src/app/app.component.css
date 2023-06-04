@@ -92,8 +92,10 @@ span {
 }
 
 .personagem-image-wrapper img {
-    width: 100%;
+    width: 110%;
+    height: 100%;
     object-fit: cover;
+    object-position: left;
 }
 
 .img-section p {
@@ -112,3 +114,4 @@ span {
     bottom: 50px;
     box-shadow: 2px 2px 5px black;
 }
+

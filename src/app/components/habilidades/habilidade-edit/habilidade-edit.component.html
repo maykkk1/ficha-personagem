@@ -1,0 +1,19 @@
+<div class="modal-wrapper">
+    <form [formGroup]="habilidadesForm" (ngSubmit)="onSubmit()">
+        <h2>{{this.editionMode ? 'Editar' : 'Nova'}} Habilidade</h2>
+        <span (click)="close()" class="exit">X</span>
+        <div class="form-group">
+            <label for="abilityName">Nome</label>
+            <input class="form-control" formControlName="abilityName" type="text" id="abilityName">
+        </div>
+        <div class="form-group">
+            <label for="abilityModifier">Modificador</label>
+            <input class="form-control" formControlName="abilityModifier" type="number" id="abilityModifier">
+        </div>
+        <div class="form-group">
+            <label for="abilityDesc">Descrição</label>
+            <input class="form-control" formControlName="abilityDesc" type="text" id="abilityDesc">
+        </div>
+        <button class="btn btn-dark">{{ this.editionMode ? 'Editar' : 'Adicionar'}}</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<li>
+    <div class="top">
+        <h3>{{ item.nome }}</h3>
+        <p>{{ item.descricao }}</p>
+    </div>
+    <div class="bottom">
+        <div class="equipamento-info">
+            <span class="tipo" [ngClass]="item.tipo == 0 ? 'tesouro' : 'magico'">{{ 
+                item.tipo == 0 
+                ? 'Tesouro'
+                : 'Item Mágico'
+            }}</span>
+        </div>
+        <div class="equipamento-info">
+            <fa-icon [ngClass]="'peso'" [icon]="faWeightHanging"></fa-icon>
+            <span>{{ item.quantidade * item.peso }}</span>
+        </div>
+        <div class="equipamento-info">
+            <fa-icon [ngClass]="'coin'" [icon]="faCoins"></fa-icon>
+            <span>{{ item.quantidade * item.valor }}</span>
+        </div>
+    </div>
+    <div class="menu">
+        <span class="quantidade"> {{ item.quantidade }}</span>
+        <fa-icon (click)="adicionar()" [ngClass]="'up'" [icon]="faArrowUp"></fa-icon>
+        <fa-icon (click)="diminuir()" [ngClass]="'down'" [icon]="faArrowDown"></fa-icon>
+    </div>
+</li>

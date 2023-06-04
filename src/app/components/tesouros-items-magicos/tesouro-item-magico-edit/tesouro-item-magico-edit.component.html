@@ -1,0 +1,42 @@
+<div class="modal-wrapper">
+    <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+        <h2>Adicionar Item</h2>
+        <div class="form-grupo">
+            <label for="nome">Nome</label>
+            <input class="form-control" formControlName="nome" id="nome" type="text">
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-grupo">
+                    <label for="valor">Valor</label>
+                    <input formControlName="valor" class="form-control" id="valor" type="number">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-grupo">
+                    <label for="peso">Peso</label>
+                    <input class="form-control" formControlName="peso" id="peso" min="0" type="number">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-grupo">
+                    <label for="peso">Qntd.</label>
+                    <input class="form-control" formControlName="quantidade" id="quantidade" min="0" type="number">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="tipo">Tipo</label>
+                    <select formControlName="tipo" class="form-select" name="tipo" id="tipo">
+                        <option value="0">Tesouro</option>
+                        <option value="1">Item Mágico</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <label for="descricao">Descrição</label>
+        <textarea class="form-control" formControlName="descricao" name="descricao" id="descricao"></textarea>
+        <button class="btn btn-dark" type="submit">Adicionar</button>
+        <button (click)="close()" type="button" class="btn btn-danger">Sair</button>
+    </form>
+</div>

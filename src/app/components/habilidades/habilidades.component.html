@@ -1,0 +1,10 @@
+<h2>Habilidades</h2>
+<button class="btn btn-dark" (click)="visible()">Adicionar Habilidade</button>
+<ul>
+    <app-habilidade 
+    *ngFor="let habilidade of habilidades"
+    [habilidade]="habilidade"
+    (editar)="editar($event)"
+    ></app-habilidade>
+</ul>
+<app-habilidade-edit [idEdit]="idEdit" *ngIf="showEdit" (closeModal)="visible()"></app-habilidade-edit>

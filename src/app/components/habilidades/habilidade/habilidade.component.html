@@ -1,0 +1,15 @@
+<li>
+    <div class="row">
+        <div class="col-md-9">
+            <h3>{{ habilidade.abilityName }}</h3>
+            <p>{{ habilidade.abilityDesc }}</p>
+        </div>
+        <div class="col-md-3">
+            <span [ngStyle]="{'background-color':habilidade.abilityModifier === null ? 'transparent' : 'black' }">{{ habilidade.abilityModifier }}</span>
+            <div class="btns">
+                <i class="bi bi-pencil-fill" (click)="editarHabilidade()"></i>
+                <i class="bi bi-x-circle del" (click)="excluir()"></i>
+            </div>
+        </div>
+    </div>
+</li>

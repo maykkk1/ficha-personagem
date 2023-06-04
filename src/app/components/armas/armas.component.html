@@ -1,0 +1,10 @@
+<h2>Armas</h2>
+<button class="btn btn-dark" (click)="visible()">Adicionar Arma</button>
+<ul>
+    <app-arma 
+        *ngFor="let arma of bolsaDeArmas"
+        [arma]="arma"
+        >
+    </app-arma>
+</ul>
+<app-arma-edit (closeModal)="visible()" *ngIf="showEdit"></app-arma-edit>

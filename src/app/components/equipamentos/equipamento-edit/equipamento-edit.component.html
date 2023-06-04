@@ -1,0 +1,14 @@
+<div class="modal-wrapper">
+    <form [formGroup]="equipamentosForm" (ngSubmit)="onSubmit()">
+        <h2>Novo Equipamento</h2>
+        <select formControlName="equipamento">
+            <option *ngFor="let item of listaDeEquipamentos; let i = index" [value]="i">{{item.nome}}</option>
+        </select>
+        <div class="form-group">
+            <label for="">Qntd.</label>
+            <input min="1" formControlName="quantidade" class="quantidade" id="quantidade" type="number">
+        </div>
+        <button class="btn btn-dark">Adicionar</button>
+        <button (click)="close()" type="button" class="btn btn-danger">Sair</button>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="modal-wrapper">
+    <form [formGroup]="armasForm" (ngSubmit)="onSubmit()">
+        <h2>Nova arma</h2>
+        <select (change)="armaChange()" formControlName="arma">
+            <option *ngFor="let item of listaDeArmas; let i = index" [value]="i">{{item.nome}}</option>
+        </select>
+        
+        <div class="mostruario">
+            <div class="header">
+                <div class="nome">
+                    <h3>{{ armaSelecionada.nome }}</h3>
+                    <div class="img-wrapper">
+                        <img [src]="'../../../../assets/armas/' + armaSelecionada.imgPath" alt="">
+                    </div>
+                </div>
+                <div class="dice">
+                    <img src="../../../../assets/image/dice.png" alt="">
+                    <span>{{ armaSelecionada.dano }}</span>
+                </div>
+            </div>
+            <div class="desc">
+                <p>{{ armaSelecionada.caracteristicas }}</p>
+            </div>
+        </div>
+        <div>
+            <label for="quantidade">Qntd.</label>
+            <input min="1" id="quantidade" formControlName="quantidade" type="number">
+        </div>
+        <button type="submit" class="btn btn-dark">Adicionar</button>
+        <button type="button" class="btn btn-danger" (click)="close()">Sair</button>
+    </form>
+</div>

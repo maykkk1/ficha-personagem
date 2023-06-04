@@ -1,0 +1,11 @@
+<h2>Tesouros & Itens Mágicos</h2>
+<button class="btn btn-dark" (click)="visible()">Adicionar Item</button>
+<ul>
+    <app-item
+        *ngFor="let item of itens"
+        [item]="item"
+    ></app-item>
+</ul>
+<app-tesouro-item-magico-edit
+    (closeModal)="visible()" *ngIf="showEdit"
+></app-tesouro-item-magico-edit>

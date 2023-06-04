@@ -1,0 +1,30 @@
+<li>
+    <div class="top">
+        <div class="weapon-icon-wrapper">
+            <img [src]="'../../../../assets/armas/'+arma.imgPath" alt="">
+        </div>
+        <div>
+            <h3>{{ arma.nome }}</h3>
+            <p>{{ arma.caracteristicas }}</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="weapon-info">
+            <fa-icon [ngClass]="'coin'" [icon]="faCoins"></fa-icon>
+            <span>{{ arma.preco * arma.quantidade }}</span>
+        </div>
+        <div class="weapon-info">
+            <fa-icon [ngClass]="'peso'" [icon]="faWeightHanging"></fa-icon>
+            <span>{{ arma.peso * arma.quantidade }}</span>
+        </div>
+        <div class="weapon-info">
+            <fa-icon [ngClass]="'d20'" [icon]="faDiceD20"></fa-icon>
+            <span>{{ arma.dano }}</span>
+        </div>
+    </div>
+    <div class="menu">
+        <span class="quantidade"> {{ arma.quantidade }}</span>
+        <fa-icon (click)="adicionar()" [ngClass]="'up'" [icon]="faArrowUp"></fa-icon>
+        <fa-icon (click)="diminuir()" [ngClass]="'down'" [icon]="faArrowDown"></fa-icon>
+    </div>
+</li>

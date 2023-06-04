@@ -1,0 +1,14 @@
+<h2>Equipamentos</h2>
+<button class="btn btn-dark" (click)="visible()">Adicionar Equipamento</button>
+<ul>
+    <app-equipamento
+        *ngFor="let equipamento of listaDeEquipamentos"
+        [equipamento]="equipamento"
+    ></app-equipamento>
+</ul>
+<app-equipamento-edit
+    *ngIf="showEdit"
+    (closeModal)="visible()"
+></app-equipamento-edit>
+
+

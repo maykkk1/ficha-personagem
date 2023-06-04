@@ -1,9 +1,3 @@
-<!-- <div class="custom-input">
-    <label for="pj">pj</label>
-    <input type="text" id="pj">
-    <p class="desc"> Nome do personagem </p>
-</div> -->
-
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
     <div class="container">
         <div class="row">
@@ -125,11 +119,12 @@
                 <h1>OLD-SCHOOL ESSENTIALS</h1>
                 <span class="ficha-personagem">FICHA DE PERSONAGEM</span>
                 <div class="personagem-image-wrapper">
-                    <img src="../assets/image/avatar.jpeg" alt="">
+                    <img src="../assets/image/avatar.png" alt="">
                 </div>
                 <p>Desenho do personagem, símbolo, descrição</p>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-9">
                 <!-- Combate -->
@@ -244,46 +239,14 @@
                     </div>
                 </div>
                 <p>Jogada de Ataque Consulte a matriz de ataque para descobrir o valor necessário para acertar uma CA específica</p>
-                <div class="row hpa">
-                    <h2>Habilidades, Perícias, Armas</h2>
-                    <div class="col-md-4">
-                        <h2>Habilidades</h2>
-                        <input formControlName="h1" type="text" id="h1">
-                        <input formControlName="h2" type="text" id="h2">
-                        <input formControlName="h3" type="text" id="h3">
-                        <input formControlName="h4" type="text" id="h4">
-                        <input formControlName="h5" type="text" id="h5">
-                        <input formControlName="h6" type="text" id="h6">
-                        <input formControlName="h7" type="text" id="h7">
-                        <input formControlName="h8" type="text" id="h8">
-                        <input formControlName="h9" type="text" id="h9">
-                        <input formControlName="h10" type="text" id="h10">
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Perícias</h2>
-                        <input formControlName="pericia1" type="text" id="pericia1">
-                        <input formControlName="pericia2" type="text" id="pericia2">
-                        <input formControlName="pericia3" type="text" id="pericia3">
-                        <input formControlName="pericia4" type="text" id="pericia4">
-                        <input formControlName="pericia5" type="text" id="pericia5">
-                        <input formControlName="pericia6" type="text" id="pericia6">
-                        <input formControlName="pericia7" type="text" id="pericia7">
-                        <input formControlName="pericia8" type="text" id="pericia8">
-                        <input formControlName="pericia9" type="text" id="pericia9">
-                        <input formControlName="pericia10" type="text" id="pericia10">
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Armas</h2>
-                        <input formControlName="arma1" type="text" id="arma1">
-                        <input formControlName="arma2" type="text" id="arma2">
-                        <input formControlName="arma3" type="text" id="arma3">
-                        <input formControlName="arma4" type="text" id="arma4">
-                        <input formControlName="arma5" type="text" id="arma5">
-                        <input formControlName="arma6" type="text" id="arma6">
-                        <input formControlName="arma7" type="text" id="arma7">
-                        <input formControlName="arma8" type="text" id="arma8">
-                        <input formControlName="arma9" type="text" id="arma9">
-                        <input formControlName="arma10" type="text" id="arma10">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <app-habilidades></app-habilidades>
+                        </div>
+                        <div class="col-md-6">
+                            <app-armas></app-armas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -348,19 +311,17 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-md-9">
-                <h2>Equipamento</h2>
-                <input formControlName="equip1" type="text" id="equip1">
-                <input formControlName="equip2" type="text" id="equip2">
-                <input formControlName="equip3" type="text" id="equip3">
-                <input formControlName="equip4" type="text" id="equip4">
-                <input formControlName="equip5" type="text" id="equip5">
-                <input formControlName="equip6" type="text" id="equip6">
-                <input formControlName="equip7" type="text" id="equip7">
-                <input formControlName="equip8" type="text" id="equip8">
-                <input formControlName="equip9" type="text" id="equip9">
-                <input formControlName="equip10" type="text" id="equip10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <app-equipamentos></app-equipamentos>
+                    </div>
+                    <div class="col-md-6">
+                        <app-tesouros-items-magicos></app-tesouros-items-magicos>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
                 <h2>Armas & Armaduras</h2>
@@ -376,34 +337,7 @@
                 <input formControlName="armasArmaduras1" type="text" id="armas-armaduras10">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-9">
-                <h2>Itens mágicos</h2>
-                <input formControlName="magicos1" type="text" id="magicos1">
-                <input formControlName="magicos2" type="text" id="magicos2">
-                <input formControlName="magicos3" type="text" id="magicos3">
-                <input formControlName="magicos4" type="text" id="magicos4">
-                <input formControlName="magicos5" type="text" id="magicos5">
-                <input formControlName="magicos6" type="text" id="magicos6">
-                <input formControlName="magicos7" type="text" id="magicos7">
-                <input formControlName="magicos8" type="text" id="magicos8">
-                <input formControlName="magicos9" type="text" id="magicos9">
-                <input formControlName="magicos10" type="text" id="magicos10">
-            </div>
-            <div class="col-md-3">
-                <h2>Tesouros</h2>
-                <input formControlName="tesouros1" type="text" id="tesouros1">
-                <input formControlName="tesouros2" type="text" id="tesouros2">
-                <input formControlName="tesouros3" type="text" id="tesouros3">
-                <input formControlName="tesouros4" type="text" id="tesouros4">
-                <input formControlName="tesouros5" type="text" id="tesouros5">
-                <input formControlName="tesouros6" type="text" id="tesouros6">
-                <input formControlName="tesouros7" type="text" id="tesouros7">
-                <input formControlName="tesouros8" type="text" id="tesouros8">
-                <input formControlName="tesouros9" type="text" id="tesouros9">
-                <input formControlName="tesouros10" type="text" id="tesouros10">
-            </div>
-        </div>
+        <hr>
         <div class="row">
             <div class="col-md-9">
                 <div class="row">

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+h2 {
+    font-family: 'MedievalSharp', cursive;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 15px 0;
+}

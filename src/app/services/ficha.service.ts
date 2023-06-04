@@ -11,4 +11,5 @@ export class FichaService {
     recuperarDados(){
         return JSON.parse(localStorage.getItem('dados')!)
     }
+
     }
