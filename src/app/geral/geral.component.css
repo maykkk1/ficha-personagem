@@ -1,0 +1,15 @@
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.img-wrapper {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 3px 3px 20px black;
+}
+
+.img-wrapper img {
+    width: 100%;
+}

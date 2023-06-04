@@ -17,6 +17,11 @@ import { EquipamentoEditComponent } from './components/equipamentos/equipamento-
 import { TesourosItemsMagicosComponent } from './components/tesouros-items-magicos/tesouros-items-magicos.component';
 import { TesouroItemMagicoEditComponent } from './components/tesouros-items-magicos/tesouro-item-magico-edit/tesouro-item-magico-edit.component';
 import { ItemComponent } from './components/tesouros-items-magicos/item/item.component';
+import { GeralComponent } from './geral/geral.component';
+import { PersonagemBarComponent } from './components/personagem-bar/personagem-bar.component';
+import { AtributosComponent } from './components/atributos/atributos.component';
+import { ProtecaoComponent } from './components/protecao/protecao.component';
+import { MoedasComponent } from './components/moedas/moedas.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { ItemComponent } from './components/tesouros-items-magicos/item/item.com
     EquipamentoEditComponent,
     TesourosItemsMagicosComponent,
     TesouroItemMagicoEditComponent,
-    ItemComponent
+    ItemComponent,
+    GeralComponent,
+    PersonagemBarComponent,
+    AtributosComponent,
+    ProtecaoComponent,
+    MoedasComponent
   ],
   imports: [
     BrowserModule,

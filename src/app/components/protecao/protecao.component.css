@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.45);
+    margin-bottom: 9px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+span {
+     font-size: 1.7rem;
+}
+.icon-wrapper {
+    width: 40px;
+}
+
+.icon-wrapper img {
+    width: 100%;
+}
+
+.icon-txt {
+    display: flex;
+    align-items: center;
+}

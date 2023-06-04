@@ -26,6 +26,10 @@ p {
     font-size: 12px;
 }
 
+p::first-letter {
+    text-transform: uppercase;
+}
+
 .btns {
     margin: 5px;
     display: flex;
